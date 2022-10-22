@@ -10,14 +10,14 @@ namespace CarDealer.Controllers
     [ApiController]
     public class CarController : ControllerBase
     {
-        [HttpGet("search/{brand}/{model}/{offer}")]
-        public ActionResult<Car> Get([FromQuery] string brand, string model, int offerId)
+        [HttpGet("search")]
+        public ActionResult<Car> Get([FromQuery] string brand, string model, int offer)
         {
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(CamelCaseNamingConvention.Instance)
                 .Build();
-            var carOffer = deserializer.Deserialize<Offer>(System.IO.File.ReadAllText($"Data/{brand}/{model}/{offerId}.yml"));
-            var carModel = deserializer.Deserialize<CarModel>(System.IO.File.ReadAllText($"Data/{brand}/{model}CarModel.yml"));
+            var carOffer = deserializer.Deserialize<Offer>(System.IO.File.ReadAllText($"Data/{brand}/{model}/{offer}.yml"));
+            var carModel = deserializer.Deserialize<CarModel>(System.IO.File.ReadAllText($"Data/{brand}/{model}.yml"));
             var carBrand = deserializer.Deserialize<Brand>(System.IO.File.ReadAllText($"Data/{brand}.yml"));
 
             Car car = new Car(carBrand, carOffer, carModel);
