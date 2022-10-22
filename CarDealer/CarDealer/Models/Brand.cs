@@ -1,7 +1,7 @@
 ﻿namespace CarDealer.Models
 {
-    public class Brand : CarModel
+    public class Brand
     {
-        public string Manufacturer { get; set; }
+        public string Manufacturer { get; set; }        
     }
 }

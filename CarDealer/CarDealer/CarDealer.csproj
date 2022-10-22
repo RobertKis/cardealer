@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Controllers\CarController.cs~RFc4ec4cd.TMP" />
+    <None Remove="Models\Brand.cs~RFc42498c.TMP" />
+    <None Remove="Program.cs~RFc64506d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="YamlDotNet" Version="12.0.2" />
   </ItemGroup>
 
 </Project>

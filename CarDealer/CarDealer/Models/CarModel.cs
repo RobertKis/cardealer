@@ -1,6 +1,6 @@
 ﻿namespace CarDealer.Models
 {
-    public class CarModel : Offer
+    public class CarModel
     {
         public string Model { get; set; }
     }
